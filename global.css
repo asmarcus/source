@@ -34,12 +34,12 @@ a.close:hover { background: #4a6397; }
   display: block;
   width: 45%;
   background: #fff;
-  padding: 10px 11px;
-  padding-top: 35px;
+  padding: 2vw;
+  padding-top: 5vh;
   position: absolute;
   top: 0;
   height: 100%;
-  opacity: 0.8
+  z-index: 0;
 }
 
 .about--two {
@@ -65,7 +65,7 @@ a.close:hover { background: #4a6397; }
   min-height: 101vh;
   overflow: hidden;
   position: relative;
-  z-index: 2;
+  z-index: 1;
   color: #fff;
 }
 
@@ -81,19 +81,19 @@ a.close:hover { background: #4a6397; }
 }
 #mainpage nav h1 {
   font-family: 'ABeeZee', 'Trebuchet MS', Arial, sans-serif;
-  font-size: 2.2em;
+  font-size: 1.9vw;
   line-height: 1em;
   font-weight: bold;
   text-transform: uppercase;
   margin-bottom: 25%;
-  margin-left: 12%;
+  margin-left: 5%;
   text-align: center;
 }
 
 .navigation {
   list-style: none;
 }
-.navigation li { text-align: left; display: block; margin-bottom: 5%; margin-left: 15%; font-size: 1.5em; font-weight: bold; }
+.navigation li { text-align: left; display: block; margin-bottom: 5%; margin-left: 18%; font-size: 1.2vw; font-weight: bold; }
 .navigation li a { display: block; padding: 5% 0%; width: 100%; color: #d1e0f8; text-decoration: none; }
 .navigation li a:hover, .navigation li a.open { color: #fff; background: #484e57; }
 

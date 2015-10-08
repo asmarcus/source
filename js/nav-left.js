@@ -1,92 +1,122 @@
 $(document).ready(function(){
-  $(".navigation li a").on("click", function(e){
-    e.preventDefault();
-    var hrefval = $(this).attr("href");
+    $(".navigation li a").on("click", function(e){
+        e.preventDefault();
+        var hrefval = $(this).attr("href");
     
-    if(hrefval == "#notepad") {
-      var distance = $('#mainpage').css('left');
+        if(hrefval == "#notepad") {
+            var distance = $('#mainpage').css('left');
+           
+            if(distance == "auto" || distance == "0px") {
+                $(this).addClass("open");
+                openPage()
+                setTimeout(
+                    function() {
+                        $('a[href="#openNode"]').css('display','block')
+                    }, 500
+                );
+            } 
+            else {
+                $('a[href="#openNode"]').css('display','none')
+                $('a[href="#closeNode"]').css('display','none')
+                $('.about--two').css('z-index','0')
+                setTimeout(
+                    function() {
+                        closeAll();
+                    }, 400
+                );
+            }
+        }
 
-      console.log(distance);
-      
-      if(distance == "auto" || distance == "0px") {
-        $(this).addClass("open");
-        openSidepage()
-        setTimeout(
-          function() {
-            $('.button-js').css('display','block')
-          }, 500);
-      } 
-      else {
-        $('.button-js').css('display','none')
-          setTimeout(
-            function() {
-              closeSidepage();
-            }, 400);
-      }
-    }
-  }); // end click event handler
+        if(hrefval == "#openNode") {
+            $(this).addClass("open");
+            openPage();
+            setTimeout(
+                function() {
+                    $('a[href="#closeNode"]').css('display','block')
+                }, 400
+            );
+            setTimeout(
+                function() {
+                    $('.about--two').css('z-index','2')
+                }, 400
+            );            
+        }
 
-  $(".navigation li a").on("click", function(e){
-    e.preventDefault();
-    var hrefval = $(this).attr("href");
+        if(hrefval == "#closeNode") {
+            $('.about--two').css('z-index','0');
+            $('a[href="#openNode"]').removeClass("open");
+            closeNode() 
+            setTimeout(
+                function() {
+                    $('a[href="#closeNode"]').css('display','none')
+                }, 400
+            );
+        }
+    }); // end click event handler
+
+  // $(".navigation li a").on("click", function(e){
+  //   e.preventDefault();
+  //   var hrefval = $(this).attr("href");
     
-    if(hrefval == "#openNode") {
-      var distance = $('#mainpage').css('left');
-
-      console.log(distance);
-      
-      if(distance !== "auto" || distance !== "0px") {
-        $(this).addClass("open");
-        openSidepage();
-        setTimeout(
-          function() {
-            $('.button-js').css('display','none');
-            //do something special
-        }, 800);
-        setTimeout(
-          function() {
-            $('.baby-button-js').css('display','block')
-            //do something special
-        }, 400);
-      } else {
-        closeSidepage();
-      }
-    }
-  }); // end click event handler
+   
+  //     }
+  //   }
+  // }); // end click event handler
   
-  $(".navigation li a").on("hover", function(){
-    var classval = $(this).hasClass("hovertrigger");
-    
-    if(classval == true) {
-      var distance = $('#mainpage').css('left');
-      
-      if(distance == "auto" || distance == "0px") {
-        $(this).addClass("open");
-        openSidepage();
-      }
-    }
-  }); // end hover event handler
-  
-  $("#closebtn").on("click", function(e){
+  $("#closebtnNote").on("click", function(e){
     e.preventDefault();
-    closeSidepage();
+    closeAll();
+    $('a[href="#openNode"]').css('display','none')
+    $('a[href="#closeNode"]').css('display','none')
+    $('.about--two').css('z-index','0');
+  }); // end close button event handler
+
+  $("#closebtnNode").on("click", function(e){
+    e.preventDefault();
+    closeNode();
+    $('.about--two').css('z-index','0');
+    $('a[href="#openNode"]').removeClass("open");
+    $('a[href="#closeNode"]').css('display','none')
   }); // end close button event handler
 
 
-  function openSidepage() {
+  function openPage() {
     $('#mainpage').animate({
       left: '45%'
-    }, 400, 'easeOutBack');
+    }, 350,'easeInQuad');
     $('#content').animate({
-      width: '-=50%'}, 400, 'easeOutBack')
+      width: '-=50%'}, 350, 'easeInSine')
   }
+
+  // function openNode() {
+  //   $('#mainpage').css(z=)
+  //   }, 400, 'easeOutBack');
+  //   $('#content').animate({
+  //     width: '-=50%'}, 400, 'easeOutBack')
+  // }
   
-  function closeSidepage(){
+  function closeAll(){
     $(".navigation li a").removeClass("open");
     $('#mainpage').animate({
       left: '0px'
-    }, 400, 'easeOutQuint');
+    }, 350, 'easeOutQuint');
     $('#content').animate({
-      width: '100%'}, 400, 'easeOutQuint')  
+      width: '100%'}, 350, 'easeOutQuint')  
   }
+
+  function closeNode(){
+    $('.about--two').css('z-index','0');
+    $('#content').animate({
+      width: '+=50%'}, 350, 'easeOutSine')  
+  }
+
+
+  // function closeNode(){
+  //   $('#mainpage').animate({
+  //     right: '45%'
+  //   }, 400, 'easeOutBack');
+  //   $('#content').animate({
+  //     width: '+=50%'}, 400, 'easeOutBack')  
+  // }
+
 }); 
