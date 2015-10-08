@@ -1,0 +1,159 @@
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+  outline: none;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+html { height: 101%; }
+body { font-family: Arial, Tahoma, sans-serif; font-size: 62.5%; line-height: 1; background: #fff; color: #343434; overflow-x: hidden; }
+
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section { display: block; }
+ol, ul { list-style: none; }
+
+blockquote, q { quotes: none; }
+blockquote:before, blockquote:after, q:before, q:after { content: ''; content: none; }
+strong { font-weight: bold; } 
+
+table { border-collapse: collapse; border-spacing: 0; }
+img { border: 0; max-width: 100%; }
+
+h2 { font-size: 2.3em; line-height: 1.1em; font-family: 'ABeeZee', 'Trebuchet MS', Arial, sans-serif; color: #646464; font-weight: bold; margin-bottom: 12px; }
+
+p { font-size: 1.4em; line-height: 1.25em; margin-bottom: 20px; color: #444; }
+
+a.close { display: inline-block; background: #5574b4; padding: 10px 8px; color: #fff; font-weight: bold; font-size: 1.4em; text-decoration: none; margin-bottom: 6px; }
+a.close:hover { background: #4a6397; }
+
+#about { 
+  display: block;
+  width: 45%;
+  background: #fff;
+  padding: 2vw;
+  padding-top: 5vh;
+  position: absolute;
+  top: 0;
+  height: 100%;
+  z-index: 0;
+}
+
+.about--two {
+  left: 55%;
+}
+
+.background {
+  position: relative;
+  min-width: 100%;
+  height: auto;
+  min-height: 101vh;
+  background: #473d47 url('assets/black_pixel.jpg') center center no-repeat;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+}
+
+#mainpage {
+  width: 100%;
+  height: auto;
+  display: block;
+  background-size: cover;
+  min-height: 101vh;
+  overflow: hidden;
+  position: relative;
+  z-index: 1;
+  color: #fff;
+}
+
+#mainpage nav { 
+  resize: horizontal;
+  position: absolute;
+  width: 10%;
+  min-height: 100%;
+  padding-top: 5%;
+  background: #343638;
+  opacity: 0.6;
+  padding-right: 1.5%;
+}
+#mainpage nav h1 {
+  font-family: 'ABeeZee', 'Trebuchet MS', Arial, sans-serif;
+  font-size: 1.9vw;
+  line-height: 1em;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-bottom: 25%;
+  margin-left: 5%;
+  text-align: center;
+}
+
+.navigation {
+  list-style: none;
+}
+.navigation li { text-align: left; display: block; margin-bottom: 5%; margin-left: 18%; font-size: 1.2vw; font-weight: bold; }
+.navigation li a { display: block; padding: 5% 0%; width: 100%; color: #d1e0f8; text-decoration: none; }
+.navigation li a:hover, .navigation li a.open { color: #fff; background: #484e57; }
+
+#node-button__hide {
+  display: none;
+}
+
+#baby-button__hide {
+  display: none;
+}
+
+#content {
+  margin-left: 10%;
+  display: block;
+  width: 100%;
+  height: auto;
+  display: block;
+  background: #473d47 url('future_blue.jpg') center center no-repeat;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  min-height: 101vh;
+  overflow: hidden;
+}
+
+
+/* top navigation */
+#mainpage nav#top {
+  position: absolute;
+  height: 120px; 
+  width: 100%;
+  min-height: 120px;
+  top: 0;
+  text-align: center;
+  padding: 20px 0px;
+  background: #343638;
+}
+
+nav#top #navigation li {
+  display: inline-block; 
+  margin-right: 6px;
+}
+
+
+/* bottom navigation */
+#mainpage nav#bottom {
+  position: fixed;
+  height: 120px; 
+  width: 100%;
+  min-height: 120px;
+  bottom: 0;
+  text-align: center;
+  padding: 20px 0px;
+  background: rgba(52,54,56,0.6);
+}
+
+nav#bottom #navigation li {
+  display: inline-block; 
+  margin-right: 6px;
+}
+
+.fixed-btm { padding-bottom: 120px; /* add extra space when nav is fixed at the bottom */ }
